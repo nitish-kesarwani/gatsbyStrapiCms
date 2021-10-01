@@ -34,13 +34,17 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        // apiURL: `http://localhost:1337`,
+        apiURL: `https://strapicmsintegration.herokuapp.com`,  
         collectionTypes: [`blogs`],
-        queryLimit: 1000, //Default to 100
+        // queryLimit: 1000, //Default to 100
       }
-    }
+    },
+    `gatsby-image`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 }
+
+// apiURL: `https://strapicmsintegration.herokuapp.com/`,

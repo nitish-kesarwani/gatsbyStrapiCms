@@ -1,6 +1,7 @@
 import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
+// import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -14,13 +15,8 @@ const IndexPage = () => (
           nodes {
             id
             title
-            description
             publishedDate
-            content
-            image {
-              id
-              url
-            }
+            content            
           }
         }
       }    
@@ -33,7 +29,7 @@ const IndexPage = () => (
           data?.allStrapiBlogs?.nodes?.map(blog => (
             <div key={blog?.id} style={{marginBottom:40}}>
               <h3>{blog?.title}</h3>
-              <div>{blog?.description}</div>
+              {/* <div>{blog?.description}</div> */}
               <div
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: blog?.content }}
@@ -51,3 +47,11 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+// image {
+//   childImageSharp {
+//     fluid(maxWidth: 100) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }
